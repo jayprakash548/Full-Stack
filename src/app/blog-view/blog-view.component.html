@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row" *ngIf="currentBlog.blogId">
+    <h2>Blog Details</h2>
+      <div class="panel-group">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3>{{ currentBlog.title | uppercase }}</h3>
+          </div>
+          <div class="panel-body">
+            <p [innerHTML]="currentBlog.bodyHtml"></p>
+          </div>
+        </div>
+        <span class="badge">{{ currentBlog.created | date }}</span>
+          <div class="pull-left">
+            <label>Author:</label>
+            <span class="label label-info">{{ currentBlog.author }}</span>
+            <label>Category:</label>
+            <span class="label label-success">{{ currentBlog.category }}</span>
+          </div>
+          <div *ngIf="currentBlog.tags.length != undefined && currentBlog.tags.length > 0" class="pull-right">
+            <label>Tags: </label>
+            <span *ngFor="let tag of currentBlog.tags; let first = first; let last = last;" class="label label-success">{{ tag }}</span>
+          </div>
+      </div>
+  </div>
+  <div class="row" *ngIf="currentBlog.blogId != undefined">
+    <div class="col-xs-4"><a [routerLink] = "['/edit', currentBlog.blogId]" class="btn btn-primary">Edit</a></div>
+    <div class="col-xs-4"><a class="btn btn-danger" (click)="deleteThisBlog()">Delete</a></div>
+    <div class="col-xs-4"><a class="btn btn-warning" (click)="goBack()">Go Back</a></div>
+  </div>
+</div>
