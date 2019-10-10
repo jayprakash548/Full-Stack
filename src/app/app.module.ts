@@ -13,11 +13,15 @@ import { AppComponent } from './app.component';
 
 // Import Blog Service
 import { BlogHttpService } from './blog-http.service';
+import { FooterComponent } from './footer/footer.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
+    FooterComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

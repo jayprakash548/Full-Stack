@@ -4,6 +4,7 @@ import { BlogHttpService } from './../blog-http.service';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-blog-create',
   templateUrl: './blog-create.component.html',
@@ -28,7 +29,7 @@ export class BlogCreateComponent implements OnInit {
       blogBody: this.blogBodyHtml,
       category: this.blogCategory
     };
-    console.log(blogData);
+    console.log('Blog Data', blogData);
     this.blogHttpService.createBlog(blogData).subscribe(
       (data: any) => {
         this.toastr.success('Blog Created Successfully!', 'Success!');

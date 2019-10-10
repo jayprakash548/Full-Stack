@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row" *ngIf="currentBlog.blogId">
+  <div class="row" *ngIf="currentBlog">
     <h2>Blog Details</h2>
       <div class="panel-group">
         <div class="panel panel-primary">
@@ -23,7 +23,7 @@
           </div>
       </div>
   </div>
-  <div class="row" *ngIf="currentBlog.blogId != undefined">
+  <div class="row" *ngIf="currentBlog">
     <div class="col-xs-4"><a [routerLink] = "['/edit', currentBlog.blogId]" class="btn btn-primary">Edit</a></div>
     <div class="col-xs-4"><a class="btn btn-danger" (click)="deleteThisBlog()">Delete</a></div>
     <div class="col-xs-4"><a class="btn btn-warning" (click)="goBack()">Go Back</a></div>

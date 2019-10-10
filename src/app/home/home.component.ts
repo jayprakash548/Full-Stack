@@ -11,7 +11,6 @@ import { BlogHttpService } from './../blog-http.service';
 
 // This is simple a class
 export class HomeComponent implements OnInit, OnDestroy {
-
   public allBlogs: any;
 
   constructor(public blogHttpService: BlogHttpService) {

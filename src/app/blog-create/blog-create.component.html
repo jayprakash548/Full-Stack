@@ -24,9 +24,13 @@
           <textarea name="blogBodyHtml" [(ngModel)]="blogBodyHtml" #bodyHtml="ngModel" class="form-control" rows="3"
             required></textarea>
         </div>
-        <select [(ngModel)]="blogCategory" #category="ngModel" name="blogCategory" class="form-control" id="category" required>
-            <option *ngFor="let category of possibleCategories" [value]="category">{{category}}</option>
-        </select>
+        <div class="form-group">
+          <label>Enter the blog category</label>
+          <select [(ngModel)]="blogCategory" #category="ngModel" name="blogCategory" class="form-control" id="category" required>
+              <option selected='' value=''>--Select--</option>
+              <option *ngFor="let category of possibleCategories" [value]="category">{{category}}</option>
+          </select>
+        </div>
         <button type="submit" class="btn btn-success postBlog" [disabled]="!createBlogForm.form.valid">Post the blog</button>
       </form>
     </div>
