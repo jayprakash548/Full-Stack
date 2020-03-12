@@ -1,24 +1,15 @@
-<div class="container">
-  <section class="my-5">
-    <h2 class="h1-responsive font-weight-bold text-center my-5">Recent posts</h2>
-    <p class="text-center dark-grey-text w-responsive mx-auto mb-5">Duis aute irure dolor in reprehenderit in
-    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<section class="content-section">
+  <div class="container-fluid">
+    <h2>Recent posts</h2>
     <div class="row" *ngIf="allBlogs.length > 0">
-      <div class="col-lg-6 col-xl-6" *ngFor="let blog of allBlogs">
-          <div class="view overlay rounded z-depth-1-half mb-lg-0 mb-4">
-            <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/49.jpg" alt="Sample image">
-            <a>
-              <div class="mask rgba-white-slight"></div>
-            </a>
-          </div>
-        <div class="col-lg-7 col-xl-8">
-          <h3 class="font-weight-bold mb-3"><strong><h3>{{ blog.title | uppercase }}</h3></strong></h3>
-          <p class="dark-grey-text">{{ blog.description }}</p>
-          <p>by <a class="font-weight-bold">{{ blog.author }}</a>, {{ blog.created | date }}</p>
-          <a [routerLink] = "['/blog', blog.blogId]" class="btn btn-primary btn-md">Read more</a>
-        </div>
+      <div class="col-md-3" *ngFor="let blog of allBlogs">
+        <h3 class="font-weight-bold mb-3"><strong>
+            <h3>{{ blog.title | uppercase }}</h3>
+          </strong></h3>
+        <p class="dark-grey-text">{{ blog.description }}</p>
+        <p>by <a class="font-weight-bold">{{ blog.author }}</a>, {{ blog.created | date }}</p>
+        <a [routerLink]="['/blog', blog.blogId]" class="btn btn-primary btn-md">Read more</a>
       </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>BlogFrontend</title>
@@ -7,8 +8,73 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+
+  <link rel='stylesheet'
+    href='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.min.css'>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel='stylesheet' href="./assets//css/style.css">
+  <!-- <script type="text/javascript"
+    id="botcopy-embedder-d7lcfheammjct"
+    class="botcopy-embedder-d7lcfheammjct"
+    data-botId="5daf4545748777382399c29c"
+>
+    var s = document.createElement('script');
+    s.type = 'text/javascript'; s.async = true;
+    s.src = 'https://d7lcfheammjct.cloudfront.net/js/injection.js';
+    document.getElementById('botcopy-embedder-d7lcfheammjct').appendChild(s);
+</script> -->
 </head>
+
 <body>
   <app-root></app-root>
+  <div class="chat">
+    <div class="chat-title">
+      <h1>Chatbot</h1>
+      <figure class="avatar">
+        <img src="assets/images/chatbot.png" />
+      </figure>
+      <div class="minimize">
+        <i class="fa fa-window-minimize" aria-hidden="true"></i>
+      </div>
+    </div>
+    <div class="messages">
+      <div class="messages-content"></div>
+      <div class="suggession">
+      </div>
+    </div>
+    <form class="message-box" id="mymsg" method="POST">
+      <input type="text" rows="10" id="MSG" name="MSG" autocomplete="off" class="message-input" placeholder="Type message...">
+      <!-- <i class="fas fa-microphone" id="start-record-btn"></i> -->
+      <button type="submit" class="message-submit">Send</button>
+    </form>
+  </div>
+  <div id="pop-up">
+      <i class="fa fa-comments" aria-hidden="true"></i>
+  </div>
+  <!-- <iframe class="chat-pannel"  allow="microphone;" width="350" height="430" src="https://console.dialogflow.com/api-client/demo/embedded/31269b28-e038-46e3-87da-1b0f8381f4e5"> -->
+</iframe>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+  <script
+    src='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js'>
+  </script>
+  <script src="./assets/js/chatbot.js"></script>
+  <script>
+  $(document).ready(function(){
+    $(".chat-title").click(function(){
+      $(".chat").hide();
+    });
+    $("#pop-up").click(function(){
+      $(".chat").show();
+      $("#pop-up").css("display", "block");
+    });
+  });
+</script>
 </body>
+
 </html>

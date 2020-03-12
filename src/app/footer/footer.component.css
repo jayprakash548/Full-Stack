@@ -1,6 +1,7 @@
-.page-footer{
-  position: relative;
+.page-footer {
+  position: fixed;
   bottom: 0%;
   text-align: center;
-  margin: 20px auto;
+  width: 100%;
+  background: #0069D9;
 }

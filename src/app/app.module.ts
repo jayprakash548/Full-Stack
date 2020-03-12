@@ -15,6 +15,9 @@ import { AppComponent } from './app.component';
 import { BlogHttpService } from './blog-http.service';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './login/login.component';
+
+
 
 @NgModule({
   declarations: [
@@ -22,6 +25,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     routingComponents,
     FooterComponent,
     NavbarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
