@@ -29,7 +29,7 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
     "less": "^3.9.0",
-    "mongoose": "^5.7.4",
+    "mongoose": "^5.7.5",
     "ngx-pagination": "^4.0.0",
     "ngx-toastr": "^10.0.4",
     "rxjs": "~6.5.3",
