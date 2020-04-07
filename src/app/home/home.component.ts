@@ -11,6 +11,7 @@ import { BlogHttpService } from './../blog-http.service';
 
 // This is simple a class
 export class HomeComponent implements OnInit, OnDestroy {
+  birthday = new Date(10, 2, 1991);
   public allBlogs: any;
 
   constructor(public blogHttpService: BlogHttpService) {
@@ -22,7 +23,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.allBlogs = this.blogHttpService.getAllBlogs().subscribe(
       (data: any) => {
         console.log(data);
-// tslint:disable-next-line: no-string-literal
+        // tslint:disable-next-line: no-string-literal
         this.allBlogs = data['data'];
       },
       (error: any) => {

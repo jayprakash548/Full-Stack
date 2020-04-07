@@ -8,7 +8,7 @@
           </strong></h3>
         <p class="dark-grey-text">{{ blog.description }}</p>
         <p>by <a class="font-weight-bold">{{ blog.author }}</a>, {{ blog.created | date }}</p>
-        <a [routerLink]="['/blog', blog.blogId]" class="btn btn-primary btn-md">Read more</a>
+        <a routerLink="['/blog', blog.blogId]" class="btn btn-primary btn-md">Read more</a>
       </div>
     </div>
   </div>
